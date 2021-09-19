@@ -1,0 +1,288 @@
+@media screen and (min-width: 600px) {
+    .classBlock {
+        background-color: #F76C6C;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2%;
+        padding-right: 4%;
+        padding-left: 4%;
+        cursor: pointer;
+        margin-right: 2%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        min-width: 150px;
+        max-width: 200px;
+        width: 33%;
+        height: 250px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        transition-duration: 0.3s;
+        -webkit-transition-duration: 0.3s;
+    }
+
+    .classBlockHolder {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .classImage {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 95%;
+        height: 50%
+    }
+    
+    .classImage img {
+        height: 100%;
+    }
+    
+    .classDescription {
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        line-height: 35px;
+        width: 100%;
+    }
+
+    .courseName {
+        font-size: 30px;
+        text-align: center;
+    }
+
+        /* Title underline */
+
+    .titleHolder h1 {
+        position: relative;
+        font-size: 40px;
+        font-weight: 600;
+    }
+
+    .titleHolder h1:after {
+        position: absolute;
+        content: '';
+        height: 4px;
+        bottom: -20px;
+        /*margin: 0 auto; This will center the underline */ 
+        left: 0;
+        right: 0;
+        width: 28%;
+        background: #A8D0E6;
+    }
+
+    .classesTop {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    
+    
+}
+
+@media screen and (max-width: 600px) {
+    .classBlockHolder {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center; */
+    }
+
+    .classBlock {
+        background-color: #F76C6C;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2%;
+        padding-right: 1%;
+        padding-left: 1%;
+        cursor: pointer;
+        margin-top: 1%;
+        margin-bottom: 3%;
+        width: 95%;
+        height: 120px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        transition-duration: 0.3s;
+        -webkit-transition-duration: 0.3s;
+    }
+
+    .classImage {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        padding-left: 20px;
+        width: 33%;
+        height: 90%
+    }
+    
+    .classImage img {
+        /* width: 100%; */
+        height: 90%;
+    }
+
+    .classDescription {
+        margin: 15px;
+        margin-right: 25px;
+        align-items: flex-end;
+        display: flex;
+        flex-direction: column;
+        line-height: 25px;
+        width: 66%;
+    }
+
+    .courseName {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    /* Title underline */
+
+    .titleHolder h1 {
+        position: relative;
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+
+    .titleHolder h1:after {
+        position: absolute;
+        content: '';
+        height: 4px;
+        bottom: -10px;
+        /*margin: 0 auto; This will center the underline */ 
+        left: 0;
+        right: 0;
+        width: 28%;
+        background: #A8D0E6;
+    }
+
+    .classesTop {
+        margin-bottom: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+
+.classBlock:hover {
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19);
+}
+
+.classMargin {
+    margin-top: 5%;
+}
+
+.courseTeacher {
+    font-size: 16px;
+}
+
+.courseCode {
+    font-size: 14px;
+    width: fit-content;
+    border-top: 1px solid black;
+}
+
+.createLink, .joinClassButton {
+    background-color: #F8E9A1;
+    text-decoration: none;
+    color: black;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+    padding: 20px 20px;
+    border-radius: 50px;
+    transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s;
+    box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.15), 0 3px 7px 0 rgba(0, 0, 0, 0.1);
+    font-size: 15px;
+    border: 0;
+}
+
+.createLink:hover, .joinClassButton:hover {
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.15), 0 0px 0px 0 rgba(0, 0, 0, 0.1);
+}
+
+.joinStudent {
+    border: 0;
+    border-bottom: 1px solid black;
+    padding: 15px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    margin-right: 10px;
+}
+
+.yellow {
+    background-color: #F8E9A1 !important;
+}
+
+.blue {
+    background-color: #a8d0e6 !important;
+}
+
+.orange {
+    background-color: rgb(245, 187, 111);
+}
+
+.green {
+    background-color: rgb(147, 218, 147);
+}
+
+.purple {
+    background-color: #808fca !important;
+}
+@media (prefers-color-scheme: dark){
+    .classDescription {
+        color: #e6e6e6;
+    }
+
+    .courseCode {
+        border-top: 2px solid #A8D0E6 !important;
+    }
+    
+    .titleHolder h1 {
+        color: #e6e6e6;
+    }
+
+    .classBlock {
+        background-color: transparent !important;
+        border: 1px solid #e6e6e6;
+    }
+
+    .classBlock:hover {
+        background-color: rgba(255, 255, 255, 0.15) !important;
+    }
+    
+    .titleHolder h1:after {
+        background-color: #A8D0E6;
+    }
+    
+    .createLink, .joinClassButton {
+        background-color: #297499;
+        color: #e6e6e6;
+        box-shadow: 0 4px 2px 0 rgba(255, 255, 255, 0.15), 0 3px 7px 0 rgba(255, 255, 255, 0.1);
+    }
+    
+    .createLink:hover, .joinClassButton:hover {
+        box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.15), 0 0px 0px 0 rgba(0, 0, 0, 0.1);
+    }
+    
+    .joinStudent {
+        border-bottom: 1px solid #e6e6e6;
+        background-color: transparent;
+        color: #e6e6e6;
+    }
+    
+    img {
+        filter: brightness(.8) contrast(1.2);
+    }
+}
