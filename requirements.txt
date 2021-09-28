@@ -43,4 +43,4 @@ Weasyprint==52.2
 # requirements for Heroku, don't forget to add weasyprint
 sycopg2==2.7.3.1
 gunicorn==19.7.1
-python==3.8.5
+Python==3.8.5
