@@ -16,7 +16,7 @@ from dateutil import tz
 from collections import defaultdict
 from app.email import send_password_reset_email
 import re
-from flask_weasyprint import HTML, render_pdf
+# from flask_weasyprint import HTML, render_pdf
 
 
 def unauthorized_access(error_message=""):
