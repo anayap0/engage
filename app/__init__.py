@@ -22,8 +22,7 @@ moment.init_app(app)
 
 
 if __name__ == "__main__":
-    # app.run(ssl_context=('cert.pem', 'key.pem'))
-    serve(app, host='0.0.0.0', port=5000, url_scheme='https')
+    serve(app, host='0.0.0.0', port=80, url_scheme='https')
 
 
 from app import routes, models 
