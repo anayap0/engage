@@ -1,8 +1,8 @@
-"""empty message
+"""Init
 
-Revision ID: a10c765d378f
-Revises: 38c4f1fce383
-Create Date: 2021-02-13 18:20:48.504066
+Revision ID: 6f583c6399e0
+Revises: 
+Create Date: 2021-10-11 14:25:05.108250
 
 """
 from alembic import op
@@ -10,8 +10,8 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'a10c765d378f'
-down_revision = '38c4f1fce383'
+revision = '6f583c6399e0'
+down_revision = None
 branch_labels = None
 depends_on = None
 
@@ -87,6 +87,7 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('teacher_id', sa.Integer(), nullable=True),
     sa.Column('form_question', sa.String(length=140), nullable=True),
+    sa.Column('form_options', sa.Integer(), nullable=True),
     sa.Column('form_course_id', sa.Integer(), nullable=True),
     sa.Column('session_id', sa.Integer(), nullable=True),
     sa.Column('timestamp', sa.DateTime(), nullable=True),
