@@ -23,6 +23,10 @@ input {
     border-bottom: 2px solid gray;
 }
 
+textarea {
+    width: 80%;
+}
+
 .submitSpace {
     margin-top: 3%;
 }

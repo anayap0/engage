@@ -1088,20 +1088,22 @@ def contact_us():
             msg = Message("Contact ticket",
                     sender="help@engageapp.onmicrosoft.com",
                     recipients=["help@engageapp.onmicrosoft.com", form.account_email.data])
-            msg.body = "Hello,\nWe have received your request: \"{}\".\nWe will get back to you as soon as we can.\n\nSincerely,\nEngage team".format(form.concern.data)
+            msg.body = "Hello,\n\nWe have received your request: \"{}\".\nWe will get back to you as soon as we can.\n\nSincerely,\nEngage team".format(form.concern.data)
             mail.send(msg)
-            flash('Your password has been reset', 'info')
+            flash('Your request has been sent.', 'info')
             return redirect(url_for('index'))
         except e:
             flash('An error has occurred', 'info')
+    return render_template('contact_us.html', form=form, title="Engage - Contact Us!")
         
         
 
 @app.route('/privacy_policy')
 def privacy_policy():
-    return render_template('privacy_policy.html')
+    return render_template('privacy_policy.html', title="Engage - Privacy Policy")
 
 @app.route('/terms_of_use')
+@app.route('/terms_of_service')
 @app.route('/terms_and_conditions')
 def terms_of_use():
-    return render_template('terms_of_use.html')
+    return render_template('terms_of_use.html', title="Engage - Terms and Conditions")

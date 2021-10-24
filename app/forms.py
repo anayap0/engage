@@ -96,5 +96,6 @@ class ResetPasswordForm(FlaskForm):
     submit = SubmitField('Reset Password')
 
 class ContactUs(FlaskForm):
-    account_email = StringField('Email; if you have an account with us, please type the email associated with your account.', validators=[DataRequired(), Email()])
-    concern = TextAreaField('Please let us know below if you have any questions, concerns, etc. below.', validators=[Length(min=10, max=250)])
+    account_email = StringField('Email associated with your account.', validators=[DataRequired(), Email()])
+    concern = TextAreaField('What is your concern/question/etc?', validators=[Length(min=10, max=250)])
+    submit = SubmitField('submit')
