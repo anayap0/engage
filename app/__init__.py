@@ -16,6 +16,7 @@ login.login_view = 'login'
 moment = Moment(app)
 mail = Mail(app)
 db.init_app(app)
+mail.init_app(app)
 migrate.init_app(app, db)
 login.init_app(app)
 moment.init_app(app)

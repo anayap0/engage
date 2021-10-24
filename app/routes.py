@@ -1,10 +1,10 @@
 from flask import render_template, flash, redirect, url_for, jsonify, send_file
-from app import app
-from app import db
+from app import app, db, mail
 from app.forms import LoginForm
 from app.forms import RegistrationForm
-from app.forms import EditProfileForm, TeacherRadioForm, StudentYesForm, StudentAgreeForm, StudentRatingForm, EditClassForm, ResetPasswordRequestForm, ResetPasswordForm
+from app.forms import EditProfileForm, TeacherRadioForm, StudentYesForm, StudentAgreeForm, StudentRatingForm, EditClassForm, ResetPasswordRequestForm, ResetPasswordForm, ContactUs
 from flask_login import current_user, login_user
+from flask_mail import Message
 from app.models import User, Reactions, Post, Courses, Signups, Session, Responses, Prompts
 from flask_login import logout_user
 from flask_login import login_required
@@ -42,18 +42,6 @@ def utc_to_local(utc_time):
 @app.route('/')
 @app.route('/index')
 def index():
-    # posts = [
-    #     {
-    #         'author': {'username': 'John'},
-    #         'body': "Beautiful day in Kirkland, Washington!"
-    #     },
-
-    #     {
-    #         'author': {'username': 'Susan'},
-    #         'body': "My name is Susan!"
-    #     }
-    # ]
-    # return redirect(url_for('login'))
     return render_template('index.html', title="Home")
 
 @app.route('/microsoft-teams-engage-upload', methods=['POST'])
@@ -1092,3 +1080,28 @@ def reset_password(token):
         return redirect(url_for('login')) 
     return render_template('reset_password.html', form=form)
 
+@app.route('/contact_us', methods=['GET', 'POST'])
+def contact_us():
+    form = ContactUs()
+    if form.validate_on_submit():
+        try:
+            msg = Message("Contact ticket",
+                    sender="help@engageapp.onmicrosoft.com",
+                    recipients=["help@engageapp.onmicrosoft.com", form.account_email.data])
+            msg.body = "Hello,\nWe have received your request: \"{}\".\nWe will get back to you as soon as we can.\n\nSincerely,\nEngage team".format(form.concern.data)
+            mail.send(msg)
+            flash('Your password has been reset', 'info')
+            return redirect(url_for('index'))
+        except e:
+            flash('An error has occurred', 'info')
+        
+        
+
+@app.route('/privacy_policy')
+def privacy_policy():
+    return render_template('privacy_policy.html')
+
+@app.route('/terms_of_use')
+@app.route('/terms_and_conditions')
+def terms_of_use():
+    return render_template('terms_of_use.html')

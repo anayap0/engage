@@ -95,10 +95,6 @@ class ResetPasswordForm(FlaskForm):
     password2 = PasswordField('Repeat Password', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Reset Password')
 
-# class RadioForm(Form):
-#     options = RadioField('', choices=[(0, 'Yes'), (1, 'Maybe'), (2, 'No')], coerce=int)
-
-# class StudentRadioForm(FlaskForm):
-#     options = FieldList(FormField(RadioForm), min_entries=2, max_entries=8)
-#     submit = SubmitField('Submit')
-
+class ContactUs(FlaskForm):
+    account_email = StringField('Email; if you have an account with us, please type the email associated with your account.', validators=[DataRequired(), Email()])
+    concern = TextAreaField('Please let us know below if you have any questions, concerns, etc. below.', validators=[Length(min=10, max=250)])
